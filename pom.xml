@@ -3,4 +3,80 @@
   <groupId>com.springstudy</groupId>
   <artifactId>SpringStudy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+   <packaging>jar</packaging>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.2.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+        	 <groupId>org.mybatis</groupId>  
+   			 <artifactId>mybatis</artifactId>  
+    		 <version>3.3.0</version>  
+        </dependency>
+        <dependency>
+        	<groupId>com.microsoft.sqlserver</groupId>
+        	<artifactId>sqljdbc4</artifactId>
+        	<version>4.0</version>
+        </dependency>
+        <!-- 增加对 spring security 的支持  -->
+         <dependency>
+        	<groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        
+       <!-- https://mvnrepository.com/artifact/cn.jpush.api/jiguang-common -->
+		<dependency>
+		    <groupId>cn.jpush.api</groupId>
+		    <artifactId>jiguang-common</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>cn.jpush.api</groupId>
+		    <artifactId>jpush-client</artifactId>
+		    <version>3.2.17</version>
+		</dependency>
+        <!-- 增加对thymeleaf html模板引擎的支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!-- 	 -->
+        <dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt</artifactId>
+		    <version>0.6.0</version>
+		</dependency>
+	
+    </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="true" /><!-- 该配置影响的所有映射器中配置的缓存的全局开关。 默认为true -->
+    </settings>
+    <!-- <properties resource="db.properties" /> -->
+    <environments default="development">
+        <environment id="development">
+             <transactionManager type="JDBC" />
+           <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                 <!-- value属性值引用db.properties配置文件中配置的值 -->
+                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+                 <property name="url" value="jdbc:sqlserver://localhost:1446;Database=BulkTestDB" />
+                 <property name="username" value="sa" />
+                 <property name="password" value="123456" />
+             </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource = "mappings/Mapper.xml" />
+    </mappers>
+</configuration>

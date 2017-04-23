@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+<input id="get_value" type="button" value=" Get value" />
+<span id="show_value"></span>
+</body>
+<script type="text/javascript">
+	(function(){
+		$("#get_value").on("click",function(){
+			$.ajax({
+				// url:"http://localhost:8080/persons",
+				// beforeSend:function(xhr){
+				// 	xhr.setRequestHeader("Authorization","eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1ZGllbmNlIjoid2ViIiwiY3JlYXRlZCI6MTQ5MjI0MTc2NjYxOSwiZXhwIjoxNDkyODQ2NTY2fQ.AAGVAZ9qeuMSgO0DmdEmzlW1bQ8--zY-KI-HuTL5yNw__LHr7V4HLeFoOV83X4sxLNHg57Vww9HpELRn-OuItw");
+				// },
+				url:"http://localhost:9000",
+				beforeSend:function(xhr){
+					xhr.setRequestHeader("JAuthorization","bmflshzbqbeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIn0.mTlkw6-N3wFwH9OIBqyOiY8o82XiDZcCf5EUevhDrB4dfEoHhqBQXfSSWYp4kHfqC3L_07SRaJMajDRTE2Crlg");
+				},
+				crossDomain:true,
+				
+				// method:'POST',
+				// headers:{
+				// 	"JAuthorization":"bmflshzbqbeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwidXNlcklkIjoibnVsbCJ9.EJCfWmOVUxq5tN4MuDo-_2F0F-wZl30tg9kQyM863rLn3JhUYe3Iu-VL1eIi8NwXk9OlxXsb6A5F8CkBAnEDmQ"
+				// },
+				success:function(data){
+					$("#show_value").text(data);
+				}
+			});
+			})
+		})();
+</script>
+</html>

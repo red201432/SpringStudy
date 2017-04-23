@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html  xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hello CORS</title>
+    </head>
+
+    <body>
+    <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form th:action="@{/base/register}" method="post">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><label> mobilephone: <input type="mobilephone" name="mobilephone"/> </label></div>
+
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+    
+    </body>
+</html>
