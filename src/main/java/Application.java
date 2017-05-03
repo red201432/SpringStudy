@@ -13,10 +13,13 @@ import util.LogUtil;
 @SpringBootApplication
 public class Application implements EmbeddedServletContainerCustomizer {
 	 public static void main(String[] args) {
-	    	LogUtil.error(Application.class, "Start Server!!!");
+	    	LogUtil.info(Application.class, "Start Server!!!");
 	        SpringApplication.run(Application.class, args);
 	    }
-	    
+	 
+	 /**
+	  * 自定义端口
+	  */
 	 public void customize(ConfigurableEmbeddedServletContainer container){
 	    	container.setPort(9000);
 	    }

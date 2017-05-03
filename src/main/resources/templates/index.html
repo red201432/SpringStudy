@@ -8,6 +8,8 @@
 
     <body>
     <h1> Hello World!!!</h1>
+    <div id="showToken"></div>
+    <input type="button" id="btn" value="getToken" />
     <!-- 
     <div th:if="${param.error}">
             Invalid username and password.
@@ -33,4 +35,14 @@
 		    </div>
 		     -->
     </body>
+    <script type="text/javascript">
+    $("#btn").on("click",function(){
+    	$.ajax({
+    		url:"/getJwtToekn",
+    		type:"GET"
+    	}).success(function(data){
+    		$("#showToken").text(data);
+    	});
+    });
+    </script>
 </html>

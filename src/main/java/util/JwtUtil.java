@@ -39,4 +39,12 @@ public class JwtUtil {
 	    response.addHeader(HEADER, token);
 		return token;
 	}
+	public static String generateToken(String userName){
+		Claims claims=Jwts.claims().setSubject(userName);
+		return TOKEN_PREFIX + Jwts.builder().setClaims(claims).
+				signWith(SignatureAlgorithm.HS512, SECRET_KEY).
+				compact();
+	}
+	
+	
 }

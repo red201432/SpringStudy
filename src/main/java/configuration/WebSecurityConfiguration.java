@@ -17,7 +17,6 @@ import service.UserService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
-	 private UserService userService=new UserService();
 	 
 	 @Autowired
 	 private AuthSuccessHandler authSuccessHandler;
@@ -39,7 +38,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 //			.and()
 //			.addFilterBefore(new JwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
-	
+
 	 @Autowired
 	 protected void configure(AuthenticationManagerBuilder builder) throws Exception {
 		// TODO Auto-generated method stub
